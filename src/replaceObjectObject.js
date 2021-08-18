@@ -22,6 +22,11 @@ function convertVNodeDataAttributesToString (vnode) {
       convertVNodeDataAttributesToString(childVNode);
     });
   }
+  if (vnode.componentOptions && vnode.componentOptions.children) {
+    vnode.componentOptions.children.forEach(function (childVNode) {
+      convertVNodeDataAttributesToString(childVNode);
+    });
+  }
 }
 
 /**
